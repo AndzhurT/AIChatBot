@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Our Bot</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Chat with Our Insurance Bot</h1>
+    <form id="chatForm">
+        <input type="text" id="userInput" placeholder="Ask me about your insurance...">
+        <button type="submit">Send</button>
+    </form>
+    <div id="responseArea">
+        <p><strong>Bot says:</strong> <span id="botResponse">No response yet...</span></p>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#chatForm').on('submit', function(e){
+                e.preventDefault(); 
+                var userMessage = $('#userInput').val();
+
+                $.ajax({
+                    url: '/receive_message',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ message: userMessage }),
+                    success: function(response) {
+                        $('#botResponse').text(response.your_message); // Display bot's reply
+                    },
+                    error: function(xhr, status, error) {
+                        $('#botResponse').text("Error while receiving response.");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
