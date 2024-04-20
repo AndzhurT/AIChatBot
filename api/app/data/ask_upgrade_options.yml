@@ -1,0 +1,10 @@
+intents:
+  ask_upgrade_options:
+    examples:
+      - How do I upgrade my Comcast package?
+      - What are the latest Comcast promotions?
+      - Can I add more channels to my current plan?
+    responses:
+      - You can upgrade your service or explore new packages directly through the Comcast website, or I can guide you through the options available. What type of upgrade are you interested in?
+      - To upgrade your package or to learn about current promotions, you may visit the Upgrade section on our website or I can help you find the best deals right now.
+      - Adding channels to your plan is easy! You can do it through your online account or I can help you explore which channels can be added to your existing package.

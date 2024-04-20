@@ -1,0 +1,4 @@
+Flask==3.0.3
+Flask-Cors==4.0.0
+ChatterBot==1.0.4
+pyz=2024.1

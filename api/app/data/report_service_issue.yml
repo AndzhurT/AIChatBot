@@ -1,0 +1,8 @@
+intents:
+  report_service_issue:
+    examples:
+      - My internet is down.
+      - I'm having issues with my Comcast service.
+      - Why is my TV signal so poor right now?
+    responses:
+      - I'm sorry to hear that. Have you tried restarting your equipment? If that doesn't work, I can assist you in reporting this to tech support.
