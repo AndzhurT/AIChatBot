@@ -6,15 +6,13 @@ from flask_cors import CORS
 
 CORS(app)
 @app.route('/')
-def home():
-    return render_template("index.html")
 
 @app.route('/ask', methods=['POST'])
 def ask():
-    data = request.json  # Expecting JSON data
+    data = request.json  # Expecting JSON data 
+    print("I recieved data " + data);
     user_message = data['message']
     bot_response = bot.get_response(user_message)
-
 
     print("Received message from user:", user_message)  # Log the message to console
     print(str(bot_response))
@@ -22,7 +20,7 @@ def ask():
     if bot_response.confidence:
             bot_response = str(bot_response)      
             print(bot_response)
-            return str(bot_response)
+            return { 'response': str(bot_response) }    
     return "I don't know what you are asking"
 
 

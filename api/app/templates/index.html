@@ -28,6 +28,7 @@
                     contentType: 'application/json',
                     data: JSON.stringify({ message: userMessage }),
                     success: function(response) {
+                        print(userMessage)
                         $('#botResponse').text(response); // Display bot's reply
                     },
                     error: function(xhr, status, error) {

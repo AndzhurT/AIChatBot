@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import TextBox from './component/textbox';
 import axios from 'axios';
 import MessageBox from './component/messagebox';
@@ -22,6 +22,19 @@ class App extends Component {
             ]
         }
     }
+
+    // function getData() {
+    //     axios({
+    //         method: "GET",
+    //         url:"/ask",
+    //     })
+    //     .then((response) => {
+    //         const res = response.data
+    //         this.state.messages.concat([{
+    //             text: res.message
+    //         }])
+    //     })
+    // }
 
     handleNewUserMessage(text){
         this.setState({
@@ -49,6 +62,7 @@ class App extends Component {
                 console.log(error);
             });
     }
+
 
     render() {
     return (
