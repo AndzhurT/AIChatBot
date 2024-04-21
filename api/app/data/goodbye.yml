@@ -1,0 +1,4 @@
+intents:
+  goodbye:
+    - Goodbye! Have a great day!
+    - Thanks for stopping by, talk to you soon!

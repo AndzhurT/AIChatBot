@@ -1,0 +1,8 @@
+intents:
+  ask_service_availability:
+    examples:
+      - Is Comcast available in my area?
+      - Can I get Comcast services at my home?
+      - How do I check Comcast availability?
+    responses:
+      - You can check service availability on the Comcast website or I can help you with that. Can you provide your zip code?

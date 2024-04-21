@@ -7,9 +7,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <h1>Chat with Our Insurance Bot</h1>
+    <h1>Chat with Comcast Bot</h1>
     <form id="chatForm">
-        <input type="text" id="userInput" placeholder="Ask me about your insurance...">
+        <input type="text" id="userInput" placeholder="Ask me about Comcast...">
         <button type="submit">Send</button>
     </form>
     <div id="responseArea">
@@ -23,12 +23,13 @@
                 var userMessage = $('#userInput').val();
 
                 $.ajax({
-                    url: '/receive_message',
+                    url: '/ask',
                     type: 'POST',
                     contentType: 'application/json',
                     data: JSON.stringify({ message: userMessage }),
                     success: function(response) {
-                        $('#botResponse').text(response.your_message); // Display bot's reply
+                        print(userMessage)
+                        $('#botResponse').text(response); // Display bot's reply
                     },
                     error: function(xhr, status, error) {
                         $('#botResponse').text("Error while receiving response.");
