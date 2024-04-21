@@ -1,7 +1,10 @@
 from app import app
 from flask import request, jsonify, render_template
 from app.chatbot import bot
+from flask_cors import CORS
 
+
+CORS(app)
 @app.route('/')
 def home():
     return render_template("index.html")
@@ -19,7 +22,7 @@ def ask():
     if bot_response.confidence:
             bot_response = str(bot_response)      
             print(bot_response)
-            return str(bot.get_response(user_message))
+            return str(bot_response)
     return "I don't know what you are asking"
 
 

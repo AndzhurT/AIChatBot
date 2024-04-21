@@ -5,7 +5,8 @@ import os
 
 
 # Data filepath 
-data_filepath = 'phillyCode2024/api/app/data' 
+dirname = os.path.dirname(__file__)
+data_filepath = os.path.join(dirname, 'data')
 
 # Creating ChatBot Instance
 bot = ChatBot('ChatBot', 
@@ -13,7 +14,7 @@ bot = ChatBot('ChatBot',
         {
             'import_path': 'chatterbot.logic.BestMatch',
             'default_response': 'I am sorry, but I do not understand.',
-            'minimum_similarity_threshold': 0.90
+            'minimum_similarity_threshold': 0.4
         }
     ])
 trainer = ListTrainer(bot)
